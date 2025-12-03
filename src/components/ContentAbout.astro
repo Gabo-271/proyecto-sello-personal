@@ -3,6 +3,7 @@ import { Code } from 'astro:components';
 
 const code = `interface Developer {
     name: string;
+    role: string;
     skills: string[];
     interests: string[];
 };
@@ -10,91 +11,76 @@ const code = `interface Developer {
 interface TechStack {
     devOps: string[];
     backend: string[];
-   frontend: string[];
+    frontend: string[];
 };
 
-type ContactType = 'github' | 'twitter' | 'linkedIn' | 'xing' | 'email';
+// Añadí 'phone' ya que está en tu CV
+type ContactType = 'email' | 'phone' | 'university_email';
 
 const techStack: TechStack = {
     devOps: [
-        'GitLab',
-        'GitHub',
-        'Cloudflare',
-        'Docker'
+        'Git',
+        'GitHub', // 
+        'Docker', // 
+        'Google Cloud Platform (GCP)', // 
+        'Red Hat System Admin' // 
     ],
     frontend: [
-        'Angular',
-        'JavaScript',
-        'TypeScript',
-        'TailwindCSS',
-        'PrimeNG',
-        'Astro',
-        'Ionic',
-        'Stencil',
-        'Capacitor',
-        'SCSS',
-        'Markdown',
-        'WordPress'
+        'HTML', // 
+        'JavaScript', // 
+        'Flutter', // 
+        'Dart', // 
+        'Figma' // 
     ],
     backend: [
-        'Supabase',
-        'Node.js',
-        'Bun',
-        'Deno',
-        'PostgreSQL',
-        'MySQL',
-        'S3 Storage',
-        'Resend'
+        'Node.js', // 
+        'C', // 
+        'C++', // 
+        'MySQL' // 
     ]
 };
 
-// Developer profile
+// Perfil de Gabriel Soto
 const me: Developer = {
-    name: 'Dejan Vi.',
+    name: 'Gabriel Soto', // 
+    role: 'Ingeniero en Informática (En curso)', // 
     skills: [
-        ...techStack.devOps,
         ...techStack.backend,
+        ...techStack.devOps,
         ...techStack.frontend
     ],
     interests: [
-        'Open Source',
-        'Security',
-        'Privacy',
-        'Performance',
-        'Self-Hosting',
-        'Networking'
+        'Backend Architecture', // 
+        'Agile Methodologies (Scrum)', // 
+        'Cloud Computing', // [cite: 51]
+        'Product Ownership', // [cite: 44]
+        'Mobile Development' // [cite: 54]
     ]
 };
 
-// Contact function
+// Función de contacto actualizada con tus datos reales
 const contact = (type: ContactType): string => {
     switch (type) {
-        case 'github':
-            return 'https://github.com/devidevio';
-        case 'twitter':
-            return 'https://x.com/devidev_io';
-        case 'linkedIn':
-            return 'https://www.linkedin.com/in/dejan-vi';
-        case 'xing':
-            return 'https://www.xing.com/profile/Dejan_Vintonjiv';
         case 'email':
-            return 'hi@devidev.io';
+            return 'andres27.2001@gmail.com'; //
+        case 'university_email':
+            return 'gsotome@utem.cl'; // 
+        case 'phone':
+            return '+56 9 6744 5474'; // 
         default:
-            return 'Send fax.';
+            return 'Contact me via email.';
     }
 };
-
 `;
 ---
 
 <Code
     code={code}
-    lang="js"
+    lang="ts"
     wrap={true}
 />
 
 <style is:global>
-
     /* Custom styling for code block line numbers */
     pre.astro-code {
         @apply bg-transparent !important;
@@ -111,9 +97,8 @@ const contact = (type: ContactType): string => {
     }
 
     pre.astro-code code .line::before {
+        @apply text-gray-600 pr-2;
         content: counter(step);
         counter-increment: step;
-        @apply text-gray-600 pr-2;
     }
-
 </style>

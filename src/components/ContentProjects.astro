@@ -1,8 +1,9 @@
 ---
+
 interface Project {
     name: string;
     description: string;
-    link: {
+    link?: {
         url?: string;
         target?: string;
         title?: string;
@@ -11,22 +12,18 @@ interface Project {
 };
 
 const projects: Project[] = [{
-    name: 'Papersend.io',
-    description: 'Papersend is the free alternative to DocSend for secure document sharing, tracking, and Data Rooms. Customize branding, control access, and protect your documents.',
-    link: {
-        url: 'https://papersend.io/',
-    }
+    name: 'Saludkine (2024) ',
+    description: 'Desarrollé la arquitectura backend de una plataforma de agendamiento y presupuestos utilizando Node.js. Me encargué de implementar la lógica crítica para la gestión de citas y cotizaciones, colaborando estrechamente con el equipo de diseño para asegurar una experiencia de usuario (UX) eficiente y fluida',
+ 
 }, {
-    name: 'Qivi.io',
-    description: 'Qivi is an all-in-one application designed to streamline business operations, enhance productivity, and maximize success. Data security is a priority.',
-    link: {
-        url: 'https://qivi.io/'
-    }
+    name: 'Digital Link (2024)',
+    description: 'Participé en el rediseño integral de la web corporativa, enfocándome en la reestructuración de la arquitectura backend. Mis esfuerzos se centraron en optimizar el rendimiento y la eficiencia del sistema, coordinando estrechamente con el equipo de desarrollo para garantizar una implementación técnica robusta y sin fricciones',
+
 }, {
-    name: 'TECHPOINT.de',
-    description: 'TECHPOINT is a local IT service provider based in the Starnberg district and the Fünfseenland region, specializing in delivering reliable and modern IT solutions.',
+    name: 'Construtem (2025) – Proyecto universitario',
+    description: 'Encabecé la gestión ágil para el desarrollo del módulo de inventario y despacho, asegurando la alineación entre el diseño UX en Figma y la implementación técnica del backend. A través de una estricta priorización del backlog y gestión de riesgos, conseguimos lanzar el MVP a tiempo, optimizando la productividad del equipo en un 25%.',
     link: {
-        url: 'https://techpoint.de/'
+        url: 'https://github.com/Construtem/frontend-inventario'
     }
 }];
 ---
@@ -63,7 +60,7 @@ const projects: Project[] = [{
                                 hover:text-primary
                                 hover:border-primary
                             ">
-                            {project.link.buttonLabel || 'Open Project Website'}
+                            {project.link.buttonLabel || 'repositorio del proyecto'}
                         </a>
                     : null
                 }
