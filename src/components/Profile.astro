@@ -1,29 +1,49 @@
 ---
 import { Picture } from 'astro:assets';
 import ProfilePicture from '../assets/profile.png';
+import yo from '../assets/yo.png';
 
 const profile = {
     name: 'Gabriel Soto Mendez.',
     title: 'Ingeniro En Sistemas ',
     location: 'Santiago, Chile',
-    description: 'Soy estudiante de último año de Ingeniería en Informática con experiencia en desarrollo tanto frontend como backend adquirida en proyectos universitarios con clientes reales. Me adapto fácilmente a trabajar en equipos multidisciplinarios bajo metodologías ágiles y busco aportar soluciones escalables y eficientes mientras continúo aprendiendo y perfeccionando mis habilidades técnicas.'
-};
+    description: 'Soy estudiante de último año de Ingeniería en Informática con experiencia en desarrollo tanto frontend como backend adquirida en proyectos universitarios con clientes reales. Me adapto fácilmente a trabajar en equipos multidisciplinarios bajo metodologías ágiles y busco aportar soluciones escalables y eficientes mientras continúo aprendiendo y perfeccionando mis habilidades técnicas.',
+    hobbies: 'Busco el equilibrio entre lo digital y lo tangible a través del diseño 3D y la carpintería, disfrutando del proceso de restaurar y construir muebles con mis propias manos.'
+}
 ---
 
 <div class="flex flex-col gap-6 items-center text-center sm:items-start sm:text-left">
 
     <div class="flex flex-col sm:flex-row gap-4 sm:items-center">
 
-        <Picture
-            src={ProfilePicture}
-            formats={['webp']}
-            width={96}
-            height={96}
-            alt={'Profile picture ' + profile.name}
-            title={profile.name}
-            class="w-26 h-28 rounded-xl object-cover border-2 border-primary mx-auto sm:mx-0"
-
-        />
+        <div class="mx-auto sm:mx-0 relative w-24 h-24" style="perspective: 1000px;">
+            <div class="relative w-full h-full transition-transform duration-700 hover:[transform:rotateY(180deg)]" style="transform-style: preserve-3d;">
+                <!-- Cara frontal -->
+                <div class="absolute w-full h-full" style="backface-visibility: hidden;">
+                    <Picture
+                        src={ProfilePicture}
+                        formats={['webp']}
+                        width={96}
+                        height={96}
+                        alt={'Profile picture ' + profile.name}
+                        title={profile.name}
+                        class="w-full h-full rounded-xl object-cover border-2 border-primary"
+                    />
+                </div>
+                <!-- Cara trasera -->
+                <div class="absolute w-full h-full" style="backface-visibility: hidden; transform: rotateY(180deg);">
+                    <Picture
+                        src={yo}
+                        formats={['webp']}
+                        width={96}
+                        height={96}
+                        alt={'Alternative picture ' + profile.name}
+                        title={profile.name}
+                        class="w-full h-full rounded-xl object-cover border-2 border-primary"
+                    />
+                </div>
+            </div>
+        </div>
 
         <div>
 
@@ -46,6 +66,10 @@ const profile = {
 
     <p class="text-sm leading-relaxed mt-4 text-gray-400">
         {profile.description}
+
+    </p>
+    <p class="text-sm leading-relaxed mt-4 text-gray-400">
+        {profile.hobbies}
     </p>
 
 </div>

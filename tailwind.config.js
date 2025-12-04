@@ -6,6 +6,15 @@ export default {
         extend: {
             colors: {
                 primary: '#F43F5E'
+            },
+            keyframes: {
+                'flip': {
+                    '0%': { transform: 'rotateY(0deg)' },
+                    '100%': { transform: 'rotateY(180deg)' }
+                }
+            },
+            animation: {
+                'flip': 'flip 0.7s ease-in-out'
             }
         }
     }
