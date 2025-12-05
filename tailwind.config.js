@@ -7,6 +7,10 @@ export default {
             colors: {
                 primary: '#F43F5E'
             },
+            fontFamily: {
+                sans: ['Inter', 'system-ui', 'sans-serif'],
+                display: ['Poppins', 'Inter', 'sans-serif']
+            },
             keyframes: {
                 'flip': {
                     '0%': { transform: 'rotateY(0deg)' },

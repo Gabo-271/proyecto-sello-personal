@@ -1,0 +1,92 @@
+---
+interface Skill {
+    name: string;
+    level?: number;
+}
+
+interface SkillCategory {
+    category: string;
+    icon: string;
+    skills: Skill[];
+}
+
+const skillCategories: SkillCategory[] = [
+    {
+        category: 'Lenguajes de Programación',
+        icon: '💻',
+        skills: [
+            { name: 'JavaScript' },
+            { name: 'C / C++' },
+            { name: 'HTML/CSS' },
+            { name: 'Dart (Flutter)' }
+        ]
+    },
+    {
+        category: 'Backend & Bases de Datos',
+        icon: '⚡',
+        skills: [
+            { name: 'Node.js' },
+            { name: 'MySQL' },
+            { name: 'REST APIs' },
+            { name: 'Docker' }
+        ]
+    },
+    {
+        category: 'Cloud & DevOps',
+        icon: '☁️',
+        skills: [
+            { name: 'Google Cloud Platform' },
+            { name: 'Compute Engine' },
+            { name: 'BigQuery' },
+            { name: 'Red Hat System Admin' }
+        ]
+    },
+    {
+        category: 'Herramientas & Metodologías',
+        icon: '🛠️',
+        skills: [
+            { name: 'Git & GitHub' },
+            { name: 'Figma' },
+            { name: 'Scrum / Agile' },
+            { name: 'Product Ownership' }
+        ]
+    },
+    {
+        category: 'Habilidades Blandas',
+        icon: '🌟',
+        skills: [
+            { name: 'Trabajo en equipo y colaboración' },
+            { name: 'Comunicación efectiva' },
+            { name: 'Resolución de problemas' },
+            { name: 'Adaptabilidad' }
+        ]
+    }
+];
+---
+
+<div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        {skillCategories.map(category => (
+            <div class="border border-gray-700 rounded-lg p-5 bg-black">
+                
+                <h3 class="text-lg font-display font-semibold text-white mb-4 flex items-center gap-2">
+                    <span class="text-2xl">{category.icon}</span>
+                    {category.category}
+                </h3>
+                
+                <div class="flex flex-wrap gap-2">
+                    {category.skills.map(skill => (
+                        <span class="px-3 py-1.5 text-sm rounded-md bg-gray-900 text-gray-300 border border-gray-700 hover:border-primary hover:text-primary transition-colors duration-200">
+                            {skill.name}
+                        </span>
+                    ))}
+                </div>
+                
+            </div>
+        ))}
+        
+    </div>
+    
+</div>

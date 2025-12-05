@@ -3,6 +3,7 @@
 interface Project {
     name: string;
     description: string;
+    role?: string;
     link?: {
         url?: string;
         target?: string;
@@ -12,18 +13,26 @@ interface Project {
 };
 
 const projects: Project[] = [{
-    name: 'Saludkine (2024) ',
-    description: 'Desarrollé la arquitectura backend de una plataforma de agendamiento y presupuestos utilizando Node.js. Me encargué de implementar la lógica crítica para la gestión de citas y cotizaciones, colaborando estrechamente con el equipo de diseño para asegurar una experiencia de usuario (UX) eficiente y fluida',
- 
+    name: 'Saludkine (2024)',
+    description: 'Desarrollé la arquitectura backend con Node.js para una plataforma de gestión de citas médicas y presupuestos. Implementé la lógica crítica del sistema, integrando APIs REST y coordinando con el equipo de diseño para garantizar una experiencia fluida.',
+    role: 'Backend Developer',
+    link: {
+        buttonLabel: 'Ver detalles'
+    }
 }, {
     name: 'Digital Link (2024)',
-    description: 'Participé en el rediseño integral de la web corporativa, enfocándome en la reestructuración de la arquitectura backend. Mis esfuerzos se centraron en optimizar el rendimiento y la eficiencia del sistema, coordinando estrechamente con el equipo de desarrollo para garantizar una implementación técnica robusta y sin fricciones',
-
-}, {
-    name: 'Construtem (2025) – Proyecto universitario',
-    description: 'Encabecé la gestión ágil para el desarrollo del módulo de inventario y despacho, asegurando la alineación entre el diseño UX en Figma y la implementación técnica del backend. A través de una estricta priorización del backlog y gestión de riesgos, conseguimos lanzar el MVP a tiempo, optimizando la productividad del equipo en un 25%.',
+    description: 'Participé en el rediseño de la web corporativa, reestructurando la arquitectura backend para optimizar rendimiento. Coordiné con el equipo de desarrollo para garantizar una implementación robusta y escalable del sistema.',
+    role: 'Backend Developer',
     link: {
-        url: 'https://github.com/Construtem/frontend-inventario'
+        buttonLabel: 'Ver detalles'
+    }
+}, {
+    name: 'Construtem (2025)',
+    description: 'Lideré como Product Owner el desarrollo del módulo de inventario y despacho. Gestioné el backlog con Scrum, supervisé la integración técnica (REST, Docker, Figma) y logré entregar el MVP mejorando el flujo de trabajo en un 25%.',
+    role: 'Product Owner / Scrum Master',
+    link: {
+        url: 'https://github.com/Construtem/frontend-inventario',
+        buttonLabel: 'Ver repositorio'
     }
 }];
 ---
@@ -38,9 +47,17 @@ const projects: Project[] = [{
 
             <div class="flex flex-col justify-center items-start border border-gray-700 rounded-lg p-4 bg-black">
 
-                <h3 class="text-xl font-semibold text-white mb-2">
+                <h3 class="text-xl font-display font-semibold text-white mb-2">
                     {project.name}
                 </h3>
+
+                {
+                    project.role && (
+                        <p class="text-sm text-primary mb-2 font-medium">
+                            {project.role}
+                        </p>
+                    )
+                }
 
                 <p class="text-gray-400">
                     {project.description}
@@ -60,8 +77,16 @@ const projects: Project[] = [{
                                 hover:text-primary
                                 hover:border-primary
                             ">
-                            {project.link.buttonLabel || 'repositorio del proyecto'}
+                            {project.link.buttonLabel || 'Ver proyecto'}
                         </a>
+                    : project.link?.buttonLabel ?
+                        <span class="
+                            w-full px-4 py-2.5 mt-4 text-center block
+
+                            border border-gray-600 rounded-lg text-gray-400
+                        ">
+                            {project.link.buttonLabel}
+                        </span>
                     : null
                 }
 

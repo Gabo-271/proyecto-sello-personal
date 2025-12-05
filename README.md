@@ -1,73 +1,89 @@
-# Astro Developer Portfolio Template
-A minimal, easy-to-customize developer portfolio template built with [Astro](https://astro.build/) and [TailwindCSS](https://tailwindcss.com/). No JavaScript in final build.
+# Portfolio Personal - Gabriel Soto Méndez
 
-## Demo
-Check out a real-world example: [devidev.io](https://devidev.io)
+Portafolio personal desarrollado con Astro y TailwindCSS. Diseño minimalista, completamente responsivo y optimizado para rendimiento.
 
-![Astro Developer Portfolio Template - About Preview | devi|dev|io](assets/preview-about.png)
+## Tecnologías Utilizadas
 
-![Astro Developer Portfolio Template - Projects Preview | devi|dev|io](assets/preview-projects.png)
+- **[Astro](https://astro.build/)** - Framework web estático de alto rendimiento
+- **[TailwindCSS](https://tailwindcss.com/)** - Framework CSS para estilos
+- **[Shiki](https://github.com/shikijs/shiki)** - Resaltado de sintaxis de código
 
-## Features
-- No bundled JavaScript – optimized for performance and speed.
-- Fully responsive – mobile-friendly and adaptable across all devices.
-- SEO & Social Media Ready – includes OpenGraph, Twitter, and DublinCore metadata.
-- 100/100 Google PageSpeed Score – for both mobile and desktop.
-- Code highlighting – clean and readable syntax with [Shiki](https://github.com/shikijs/shiki).
-- Developer Portfolio & Projects Showcase – display your work with ease.
-- Code Editor-Inspired Design – modern and developer-friendly aesthetics.
+## Instalación y Configuración
 
-## Tech Stack
-- [Astro](https://astro.build/)
-- [TailwindCSS](https://tailwindcss.com/)
-- [Shiki](https://github.com/shikijs/shiki)
+### Requisitos Previos
+- Node.js v18 o superior
+- npm o pnpm
 
-## Getting Started
+### Instrucciones
 
-```sh
-# 1. Clone the repository
-git clone https://github.com/devidevio/astro-developer-portfolio .
+```bash
+# 1. Clonar el repositorio
+git clone <url-del-repositorio>
+cd astro-developer-portfolio-template
 
-# 2. Install dependencies
+# 2. Instalar dependencias
 npm install
 
-# 3. Run the development server
+# 3. Iniciar servidor de desarrollo
 npm run dev
+# El sitio estará disponible en http://localhost:4321
 
-# 4. Build for production
+# 4. Compilar para producción
 npm run build
-
-# Deploy the contents of the `./dist` folder wherever you like.
+# Los archivos compilados estarán en ./dist
 ```
 
-## Customization
-### Site & Domain Configuration
-- Modify `astro.config.mjs` to update your `site` settings, including metadata for SEO.
+## Personalización
 
-### Theme Customization
-- Adjust the primary theme color in `tailwind.config.js`, to fit your branding.
+### Información Personal
+Edita estos archivos para actualizar tu información:
+- `src/components/Profile.astro` - Nombre, título, ubicación y descripción
+- `src/components/Socials.astro` - Enlaces a redes sociales
+- `src/components/ContentProjects.astro` - Proyectos destacados con roles
+- `src/components/ContentSkills.astro` - Habilidades técnicas y blandas
+- `src/components/ContentAbout.astro` - Sección "Sobre mí"
 
-### Updating Content & SEO
-Edit the **Frontmatter** variables in these files:
-- `src/layouts/Layout.astro` – General page info (title, SEO, etc.)
-- `src/components/Socials.astro` – Update your social media links.
-- `src/components/Profile.astro` – Personal profile information.
-- `src/components/ContentProjects.astro` – Projects/portfolio section content.
-- `src/components/ContentAbout.astro` – About section content.
+### Imágenes
+- `src/assets/profile.png` - Foto de perfil principal
+- `src/assets/yo.jpg` - Foto alternativa (efecto flip)
+- `public/img/logo.svg` - Logo del sitio
+- `public/img/meta.png` - Imagen Open Graph para compartir en redes
 
-### Profile Picture
-- Replace `/src/assets/profile.png` with your own image.
+### Configuración del Sitio
+- `astro.config.mjs` - URL del sitio y configuración general
+- `tailwind.config.js` - Color principal del tema
+- `src/layouts/Layout.astro` - Metadatos SEO y configuración general
 
-### Logo & OpenGraph Image
-- Update these files:
-  - `/public/img/logo.svg` (your logo)
-  - `/public/img/meta.png` (your OpenGraph image)
+## Estructura del Proyecto
 
-Need a free OpenGraph image?
-- https://tailwind-generator.com/og-image-generator/generator
+```
+├── src/
+│   ├── assets/          # Imágenes y recursos
+│   ├── components/      # Componentes de la UI
+│   ├── layouts/         # Plantillas de página
+│   ├── pages/          # Páginas del sitio
+│   └── styles/         # Estilos globales
+├── public/             # Archivos estáticos
+└── astro.config.mjs    # Configuración de Astro
+```
 
-### Sitemap & Robots.txt
-- Adjust `/public/robots.txt` to match your domain.
+## Características
 
-## ⭐ Contributing
-Feel free to fork, customize, and contribute to this project. If you find it useful, leaving a star would be greatly appreciated.
+- ✅ 100% estático - Sin JavaScript en el cliente
+- ✅ Totalmente responsivo
+- ✅ Optimizado para SEO
+- ✅ Efecto flip animado en foto de perfil
+- ✅ Resaltado de sintaxis para código
+- ✅ Puntuación perfecta en PageSpeed
+
+## Despliegue
+
+El contenido de la carpeta `./dist` puede desplegarse en cualquier servicio de hosting estático:
+- Vercel
+- Netlify
+- GitHub Pages
+- Cloudflare Pages
+
+---
+
+Desarrollado por Gabriel Soto Méndez
