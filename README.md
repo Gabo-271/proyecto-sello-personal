@@ -78,11 +78,22 @@ Edita estos archivos para actualizar tu información:
 
 ## Despliegue
 
-El contenido de la carpeta `./dist` puede desplegarse en cualquier servicio de hosting estático:
+### GitHub Pages (Automático)
+El sitio se despliega automáticamente mediante GitHub Actions cuando se hace push a la rama `main`.
+
+**URL del sitio:** https://gabo-271.github.io/proyecto-sello-personal
+
+### Otros servicios
+El contenido de la carpeta `./dist` también puede desplegarse en:
 - Vercel
 - Netlify
-- GitHub Pages
 - Cloudflare Pages
+
+### Despliegue manual
+```bash
+npm run build
+# Los archivos compilados están en ./dist
+```
 
 ---
 
