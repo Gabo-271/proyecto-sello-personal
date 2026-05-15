@@ -1,30 +1,55 @@
 ---
-import Socials from './Socials.astro';
+import Socials from "./Socials.astro";
 ---
 
 <div>
-
     <!-- Start: Terminal -->
-    <div class="mt-6 bg-black rounded-lg p-4 border border-gray-600 text-xs">
+    <div
+        class="mt-6 relative w-full h-28 group cursor-pointer"
+        style="perspective: 1000px;"
+    >
+        <div
+            class="relative w-full h-full transition-transform duration-700 group-hover:[transform:rotateY(180deg)]"
+            style="transform-style: preserve-3d;"
+        >
+            <!-- Front Face: Terminal -->
+            <div
+                class="absolute w-full h-full bg-black rounded-lg p-4 border border-gray-600 text-xs"
+                style="backface-visibility: hidden;"
+            >
+                <div class="flex items-center mb-2">
+                    <span class="text-primary mr-2">$</span>
+                    <span class="text-gray-100">npx connect</span>
+                </div>
+                <div class="mt-2 text-gray-400">
+                    Initializing...<br />
+                    Ready to connect.<br />
+                    Waiting for contact request...
+                </div>
+            </div>
 
-        <div class="flex items-center mb-2">
-            <span class="text-primary mr-2">$</span>
-            <span class="text-gray-100">npx connect</span>
+            <!-- Back Face: Llamativo -->
+            <div
+                class="absolute w-full h-full bg-primary rounded-lg p-4 border border-primary text-sm flex flex-col items-center justify-center overflow-hidden"
+                style="backface-visibility: hidden; transform: rotateY(180deg);"
+            >
+                <!-- Decoración de fondo llamativa -->
+                <div
+                    class="absolute inset-0 opacity-20 pointer-events-none"
+                    style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.3) 10px, rgba(255,255,255,0.3) 20px);"
+                >
+                </div>
+
+                <span
+                    class="relative z-10 font-bold text-white text-lg drop-shadow-md"
+                    >¡Conexión Exitosa! 🚀</span
+                >
+            </div>
         </div>
-
-        <div class="mt-2 text-gray-400">
-            Initializing...
-            <br />
-            Ready to connect.
-            <br />
-            Waiting for contact request...
-        </div>
-
     </div>
     <!-- End: Terminal -->
 
     <!-- Start: Social Links -->
     <Socials />
     <!-- End: Social Links -->
-
 </div>

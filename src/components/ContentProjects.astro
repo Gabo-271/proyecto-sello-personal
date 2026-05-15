@@ -13,6 +13,10 @@ interface Project {
 };
 
 const projects: Project[] = [{
+    name: 'Red de Salud UC CHRISTUS',
+    description: '<b>Gestión de Infraestructura:</b> Administré servidores y máquinas virtuales mediante VMware, realizando configuraciones, respaldos (snapshots) y actualizaciones críticas para asegurar la continuidad de los servicios clínicos.<br/><br/><b>Administración de Identidades:</b> Gestioné cuentas, grupos de seguridad y permisos de acceso en Active Directory y Microsoft 365, garantizando la privacidad y el acceso correcto a plataformas médicas.<br/><br/><b>Soporte y Cloud:</b> Resolví incidencias técnicas de alta prioridad a través de ServiceNow y colaboré en el monitoreo de costos y configuración de instancias en la nube con AWS.',
+    role: 'Ingeniero de Sistemas TI (Práctica Profesional)'
+}, {
     name: 'Saludkine (2024)',
     description: 'Desarrollé la arquitectura backend con Node.js para una plataforma de gestión de citas médicas y presupuestos. Implementé la lógica crítica del sistema, integrando APIs REST y coordinando con el equipo de diseño para garantizar una experiencia fluida.',
     role: 'Backend Developer',
@@ -45,7 +49,7 @@ const projects: Project[] = [{
 
         {projects.map(project =>
 
-            <div class="flex flex-col justify-center items-start border border-gray-700 rounded-lg p-4 bg-black">
+            <div class="flex flex-col justify-start items-start border border-gray-700 rounded-lg p-4 bg-black h-full">
 
                 <h3 class="text-xl font-display font-semibold text-white mb-2">
                     {project.name}
@@ -59,9 +63,7 @@ const projects: Project[] = [{
                     )
                 }
 
-                <p class="text-gray-400">
-                    {project.description}
-                </p>
+                <p class="text-gray-400 text-sm" set:html={project.description}></p>
 
                 {
                     project.link?.url ?
@@ -70,7 +72,7 @@ const projects: Project[] = [{
                             title={project.link.title || project.name}
                             target={project.link.target || '_blank'}
                             class="
-                                w-full px-4 py-2.5 mt-4 text-center
+                                w-full px-4 py-2.5 mt-auto text-center
 
                                 border border-gray-600 rounded-lg
 
@@ -81,7 +83,7 @@ const projects: Project[] = [{
                         </a>
                     : project.link?.buttonLabel ?
                         <span class="
-                            w-full px-4 py-2.5 mt-4 text-center block
+                            w-full px-4 py-2.5 mt-auto text-center block
 
                             border border-gray-600 rounded-lg text-gray-400
                         ">
