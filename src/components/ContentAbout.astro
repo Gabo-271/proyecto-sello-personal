@@ -14,59 +14,56 @@ interface TechStack {
     frontend: string[];
 };
 
-// Añadí 'phone' ya que está en tu CV
 type ContactType = 'email' | 'phone' | 'university_email';
 
 const techStack: TechStack = {
     devOps: [
         'Git',
-        'GitHub', // 
-        'Docker', // 
-        'Google Cloud Platform (GCP)', // 
-        'Red Hat System Admin' // 
+        'GitHub',
+        'Docker',
+        'Google Cloud Platform (GCP)',
+        'Red Hat System Admin'
     ],
     frontend: [
-        'HTML', // 
-        'JavaScript', // 
-        'Flutter', // 
-        'Dart', // 
-        'Figma' // 
+        'HTML',
+        'JavaScript',
+        'Flutter',
+        'Dart',
+        'Figma'
     ],
     backend: [
-        'Node.js', // 
-        'C', // 
-        'C++', // 
-        'MySQL' // 
+        'Node.js',
+        'C',
+        'C++',
+        'MySQL'
     ]
 };
 
-// Perfil de Gabriel Soto
 const me: Developer = {
-    name: 'Gabriel Soto', // 
-    role: 'Ingeniero en Informática', // 
+    name: 'Gabriel Soto',
+    role: 'Ingeniero en Informática',
     skills: [
         ...techStack.backend,
         ...techStack.devOps,
         ...techStack.frontend
     ],
     interests: [
-        'Backend Architecture', // 
-        'Agile Methodologies (Scrum)', // 
-        'Cloud Computing', // [cite: 51]
-        'Product Ownership', // [cite: 44]
-        'Mobile Development' // [cite: 54]
+        'Backend Architecture',
+        'Agile Methodologies (Scrum)',
+        'Cloud Computing',
+        'Product Ownership',
+        'Mobile Development'
     ]
 };
 
-// Función de contacto actualizada con tus datos reales
 const contact = (type: ContactType): string => {
     switch (type) {
         case 'email':
-            return 'andres27.2001@gmail.com'; //
+            return 'andres27.2001@gmail.com';
         case 'university_email':
-            return 'gsotome@utem.cl'; // 
+            return 'gsotome@utem.cl';
         case 'phone':
-            return '+56 9 6744 5474'; // 
+            return '+56 9 6744 5474';
         default:
             return 'Contact me via email.';
     }
